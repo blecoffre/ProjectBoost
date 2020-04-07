@@ -3,6 +3,7 @@
 public class Rocket : MonoBehaviour
 {
     private Rigidbody m_rigidbody;
+    private AudioSource m_audioSource;
 
     void Start()
     {
@@ -14,6 +15,11 @@ public class Rocket : MonoBehaviour
         m_rigidbody = GetComponent<Rigidbody>();
         if (!m_rigidbody)
             Debug.LogError("Can't find rigidbody component on Player rocket !");
+
+        m_audioSource = GetComponent<AudioSource>();
+        if (!m_audioSource)
+            Debug.LogError("Can't find audio source component on Player rocket !");
+
     }
 
     void Update()
@@ -27,6 +33,14 @@ public class Rocket : MonoBehaviour
         {
             //Thrust
             m_rigidbody.AddRelativeForce(Vector3.up);
+            
+            if(!m_audioSource.isPlaying)
+                m_audioSource.Play();
+        }
+        else
+        {
+            if (m_audioSource.isPlaying)
+                m_audioSource.Stop();
         }
 
         if (Input.GetKey(KeyCode.Q))

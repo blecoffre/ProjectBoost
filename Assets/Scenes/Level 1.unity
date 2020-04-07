@@ -120,13 +120,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!108 &705507994 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 6648671224481079878, guid: cd89ffa221149fa4bb35ea68602fb73d,
-    type: 3}
-  m_PrefabInstance: {fileID: 6648671224044146908}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2260712436787489383
+--- !u!1001 &540799526
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -171,7 +165,7 @@ PrefabInstance:
     - target: {fileID: 5156101185179040511, guid: 189aa1b45a1fd9946b14d12be57e6b45,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5156101185179040511, guid: 189aa1b45a1fd9946b14d12be57e6b45,
         type: 3}
@@ -195,6 +189,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 189aa1b45a1fd9946b14d12be57e6b45, type: 3}
+--- !u!108 &705507994 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 6648671224481079878, guid: cd89ffa221149fa4bb35ea68602fb73d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6648671224044146908}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3103754283239997639
 PrefabInstance:
   m_ObjectHideFlags: 0
