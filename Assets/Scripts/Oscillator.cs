@@ -30,7 +30,7 @@ public class Oscillator : MonoBehaviour
     private void Oscillate()
     {
         if (m_period <= Mathf.Epsilon)
-        {
+        {   
             return;
         }
 

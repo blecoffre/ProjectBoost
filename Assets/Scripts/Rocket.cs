@@ -3,14 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
+    [Header("Main Rocket Controls Parameters")]
     [SerializeField]
     private float m_rcsThrust = 100f;
     [SerializeField]
     private float m_mainThrust = 1000f;
 
+    [Header("Time before loading/reloading scene")]
     [SerializeField]
     private float m_timeBeforeLoadingScene = 1.0f;
 
+    [Header("AudioClips")]
     [SerializeField]
     private AudioClip m_mainEngineClip;
     [SerializeField]
@@ -18,6 +21,7 @@ public class Rocket : MonoBehaviour
     [SerializeField]
     private AudioClip m_successClip;
 
+    [Header("FX Particles Systems")]
     [SerializeField]
     private ParticleSystem m_mainEngineParticles;
     [SerializeField]
@@ -34,10 +38,9 @@ public class Rocket : MonoBehaviour
     {
         Alive, Dying, Transcending
     }
-
     private RocketState m_state = RocketState.Alive;
 
-    void Start()
+    private void Start()
     {
         GetAllRequiredComponents();
     }
@@ -46,15 +49,15 @@ public class Rocket : MonoBehaviour
     {
         m_rigidbody = GetComponent<Rigidbody>();
         if (!m_rigidbody)
-            Debug.LogError("Can't find rigidbody component on Player rocket !");
+            SimpleErrorHandlerManager.MissingComponentError(typeof(Rigidbody), gameObject.name);
 
         m_audioSource = GetComponent<AudioSource>();
         if (!m_audioSource)
-            Debug.LogError("Can't find audio source component on Player rocket !");
+            SimpleErrorHandlerManager.MissingComponentError(typeof(AudioSource), gameObject.name);
 
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         ProcessInput();
 
@@ -79,26 +82,33 @@ public class Rocket : MonoBehaviour
         }
         else
         {
-            m_audioSource.Stop();
-            m_mainEngineParticles.Stop();
+            StopApplyingThrust();
         }
     }
+ 
 
     private void ApplyThrust()
     {
         float thrustForceThisFrame = m_mainThrust * Time.deltaTime;
         //Thrust
-        m_rigidbody.AddRelativeForce(Vector3.up * thrustForceThisFrame);
+        m_rigidbody?.AddRelativeForce(Vector3.up * thrustForceThisFrame);
 
-        if (!m_audioSource.isPlaying)
+        if (m_audioSource && !m_audioSource.isPlaying)
             PlayClip(m_mainEngineClip);
 
         PlayParticles(m_mainEngineParticles);
     }
 
+    private void StopApplyingThrust()
+    {
+        m_audioSource?.Stop();
+        m_mainEngineParticles?.Stop();
+    }
+
     private void RespondToRotateInput()
     {
-        m_rigidbody.angularVelocity = Vector3.zero; //remove rotation due to physics
+        if (m_rigidbody) 
+            m_rigidbody.angularVelocity = Vector3.zero; //remove rotation due to physics
 
         float rotationSpeed = m_rcsThrust * Time.deltaTime;
 
@@ -125,6 +135,7 @@ public class Rocket : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Friendly":
+                //Do funny stuff ?
                 break;
             case "Finish":
                 StartSuccess();
@@ -151,32 +162,36 @@ public class Rocket : MonoBehaviour
         PlayParticles(m_deathParticles);
     }
 
-    AudioClip currentPlayingClip;
     private void PlayClip(AudioClip clip)
     {
-        if (clip != m_mainEngineClip)
+        if (clip)
         {
-            m_audioSource.Stop();
+            if (clip != m_mainEngineClip)
+            {
+                m_audioSource?.Stop();
+            }
+
+            m_audioSource?.PlayOneShot(clip);
         }
-       
-        m_audioSource.PlayOneShot(clip);
     }
 
-    ParticleSystem currentPlayingParticles;
     private void PlayParticles(ParticleSystem particles)
     {
-        if (particles != m_mainEngineParticles)
+        if (particles)
         {
-            m_mainEngineParticles.Stop();
-        }
+            if (particles != m_mainEngineParticles)
+            {
+                m_mainEngineParticles?.Stop();
+            }
 
-        particles.Play();
+            particles?.Play();
+        }
     }
 
     private void LoadNextLevel()
     {
         int index = SceneManager.GetActiveScene().buildIndex;
-        if (SceneManager.GetSceneAt(index) != null)
+        if (SceneManager.GetSceneByBuildIndex(index).IsValid())
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
