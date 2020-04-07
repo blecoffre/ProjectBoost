@@ -531,3 +531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_rcsThrust: 300
   m_mainThrust: 1000
+  m_timeBeforeLoadingScene: 1
+  m_mainEngineClip: {fileID: 8300000, guid: 442e5565cc3e18b4493c24cd0713247e, type: 3}
+  m_deathClip: {fileID: 8300000, guid: fa184456ae727464db0f5d9a9f400998, type: 3}
+  m_successClip: {fileID: 8300000, guid: be50b423acb0e614c97a852e356e6e45, type: 3}
