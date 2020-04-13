@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 [ExecuteInEditMode]
 public class EditorDeltaTime : MonoBehaviour
 {
+#if UNITY_EDITOR
     //TODO : Find a way to smooth DeltaTime
     private static EditorDeltaTime instance = null;
     public static EditorDeltaTime Instance
@@ -40,4 +39,5 @@ public class EditorDeltaTime : MonoBehaviour
         DeltaTime = EditorApplication.timeSinceStartup - m_lastTimeSinceStartup;
         m_lastTimeSinceStartup = EditorApplication.timeSinceStartup;
     }
+#endif
 }
