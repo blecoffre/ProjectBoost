@@ -155,7 +155,7 @@ public class Rocket : MonoBehaviour
 
     private void StartDeath()
     {
-        EventManager.TriggerEvent(EventsName.ReloadLevel);
+        EventManager.TriggerEvent(EventsName.StopPlaying, false);
         m_state = RocketState.Dying;
         PlayClip(m_deathClip);
         PlayParticles(m_deathParticles);
