@@ -6,8 +6,10 @@ using UnityEngine.Events;
 public class LevelController : MonoBehaviour
 {
 
-    private UnityAction m_loadNextLevelAction;
-    private UnityAction m_reloadLevelAction;
+    private UnityAction m_loadNextLevelAction = null;
+    private UnityAction m_reloadLevelAction = null;
+    private UnityAction<object> m_setCurrentTimeAction = null;
+
 
     private void Start()
     {
@@ -16,12 +18,16 @@ public class LevelController : MonoBehaviour
 
         m_reloadLevelAction += ReloadLevel;
         EventManager.StartListening(EventsName.ReloadLevel, m_reloadLevelAction);
+
+        m_setCurrentTimeAction += SetCurrentLevelTime;
+        EventManager.StartListening(EventsName.SendScoreTime, m_setCurrentTimeAction);
     }
 
     private void OnDisable()
     {
         EventManager.StopListening(EventsName.LoadNextLevel, m_loadNextLevelAction);
         EventManager.StopListening(EventsName.ReloadLevel, m_reloadLevelAction);
+        EventManager.StopListening(EventsName.SendScoreTime, m_setCurrentTimeAction);
     }
 
     private void LoadNextLevel()
@@ -32,5 +38,10 @@ public class LevelController : MonoBehaviour
     private void ReloadLevel()
     {
         LevelManager.ReloadLevel();
+    }
+
+    private void SetCurrentLevelTime(object time)
+    {
+           LevelManager.SetCurrentLevelTime((float)time);
     }
 }

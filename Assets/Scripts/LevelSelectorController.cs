@@ -24,7 +24,7 @@ public class LevelSelectorController : MonoBehaviour
         for (int i = 0; i < levels.Count; i++)
         {
             LevelBlocView view = Instantiate(m_levelBlocViewPrefab, m_blocViewContainer);
-            view.Initialize(levels[i], LevelManager.GetLevelRecord(levels[i]));
+            view.Initialize(levels[i], LevelManager.GetLevelRecordAsString(levels[i]));
             m_views[i] = view;
         }
     }

@@ -9,7 +9,6 @@ public class EndLaunchPad : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             EventManager.TriggerEvent(EventsName.StopPlaying, false);
-            EventManager.TriggerEvent(EventsName.LoadNextLevel);
         }
     }
 }

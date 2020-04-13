@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
@@ -8,6 +10,8 @@ public class LevelManager : MonoBehaviour
     public static string LevelName;
     public static bool WithProgressBar;
     public static float TimeBeforeOpen;
+
+    private static float m_currentLevelTime;
 
     public static void LoadLevel(string levelName, bool withProgressBar = false, float timeBeforeOpen = 1.0f)
     {
@@ -65,15 +69,67 @@ public class LevelManager : MonoBehaviour
         return levelScenes;
     }
 
-    public static string GetLevelRecord(string levelName)
+    public static string GetLevelRecordAsString(string levelName)
     {
         if (PlayerPrefs.HasKey(levelName))
         {
-            return PlayerPrefs.GetString(levelName);
+            return FormatTime.FormatLevelTime(PlayerPrefs.GetFloat(levelName));
         }
         else
         {
             return "None";
         }
     }
+
+    public static string GetCurrentLevelRecordAsString()
+    {
+        string currentLevelName = SceneManager.GetActiveScene().name;
+        return GetLevelRecordAsString(currentLevelName);
+    }
+
+    public static float GetLevelRecordAsFloat(string levelName)
+    {
+        if (PlayerPrefs.HasKey(levelName))
+        {
+            float time = PlayerPrefs.GetFloat(levelName);
+            return (PlayerPrefs.GetFloat(levelName));
+        }
+        else
+        {
+            return 0.0f;
+        }
+    }
+
+    public static float GetCurrentLevelRecordAsFloat()
+    {
+        string currentLevelName = SceneManager.GetActiveScene().name;
+        return GetLevelRecordAsFloat(currentLevelName);
+    }
+
+    public static bool IsNewRecord()
+    {
+        float current = GetCurrentLevelRecordAsFloat();
+        return (GetCurrentLevelRecordAsFloat() == 0.0f || GetCurrentLevelRecordAsFloat() > m_currentLevelTime);
+    }
+
+    public static void SetCurrentLevelTime(float time)
+    {
+        m_currentLevelTime = time;
+        ProcessWithNewLevelTime();
+    }
+
+    private static void ProcessWithNewLevelTime()
+    {
+        EventManager.TriggerEvent(EventsName.OpenEndLevelView);
+        if (IsNewRecord())
+        {
+            EventManager.TriggerEvent(EventsName.SaveRecord, m_currentLevelTime);
+        }
+    }
+
+    public static string GetCurrentLevelTimeAsString()
+    {
+        return FormatTime.FormatLevelTime(m_currentLevelTime);
+    }
+
 }
