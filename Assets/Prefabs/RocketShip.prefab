@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 6930398729115421208}
   m_Layer: 0
   m_Name: RocketShip
-  m_TagString: Friendly
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -536,8 +536,8 @@ MonoBehaviour:
   m_mainThrust: 1000
   m_timeBeforeLoadingScene: 1
   m_mainEngineClip: {fileID: 8300000, guid: 442e5565cc3e18b4493c24cd0713247e, type: 3}
-  m_deathClip: {fileID: 8300000, guid: fa184456ae727464db0f5d9a9f400998, type: 3}
-  m_successClip: {fileID: 8300000, guid: be50b423acb0e614c97a852e356e6e45, type: 3}
+  m_deathClip: {fileID: 8300000, guid: bfd9e176032063f42bb635c4d53c8648, type: 3}
+  m_successClip: {fileID: 8300000, guid: 9cd68c271d9bf924cb96b11a7acecdc0, type: 3}
   m_mainEngineParticles: {fileID: 341225804057589716}
   m_deathParticles: {fileID: 5199421089092875049}
   m_successParticles: {fileID: 3054205313650547737}

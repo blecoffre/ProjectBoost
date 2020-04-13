@@ -148,7 +148,6 @@ public class Rocket : MonoBehaviour
 
     private void StartSuccess()
     {
-        Invoke("LoadNextLevel", m_timeBeforeLoadingScene);
         m_state = RocketState.Transcending;
         PlayClip(m_successClip);
         PlayParticles(m_successParticles);
@@ -156,7 +155,7 @@ public class Rocket : MonoBehaviour
 
     private void StartDeath()
     {
-        Invoke("ReloadLevel", m_timeBeforeLoadingScene);
+        EventManager.TriggerEvent(EventsName.ReloadLevel);
         m_state = RocketState.Dying;
         PlayClip(m_deathClip);
         PlayParticles(m_deathParticles);
