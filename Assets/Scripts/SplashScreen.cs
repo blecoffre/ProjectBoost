@@ -1,14 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using ProjectBoost.Const;
+using ProjectBoost.Manager;
+using ProjectBoost.UIExtension;
 using UnityEngine;
 
-public class SplashScreen : MonoBehaviour
+namespace ProjectBoost
 {
-    [SerializeField] private PopInAndOutUI m_titlePop;
-    [SerializeField] private float m_timeBeforeOpenMenu = 3.0f;
-    void Start()
+    public class SplashScreen : MonoBehaviour
     {
-        m_titlePop.PlayPopIn();
-        LevelManager.LoadLevel("MainMenu", true, m_timeBeforeOpenMenu);
+        [SerializeField] private PopInAndOutUI m_titlePop;
+        [SerializeField] private float m_timeBeforeOpenMenu = 3.0f;
+        void Start()
+        {
+            m_titlePop.PlayPopIn();
+            SceneUtility.LoadSceneAsync(SceneNames.MainMenu, true, m_timeBeforeOpenMenu);
+        }
     }
 }
+

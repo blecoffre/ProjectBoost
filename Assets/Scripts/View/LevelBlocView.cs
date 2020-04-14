@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using ProjectBoost.Controller;
 
 public class LevelBlocView : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class LevelBlocView : MonoBehaviour
 
     private void OpenLevel()
     {
-        FindObjectOfType<LevelSelectorController>()?.LoadLevel(m_levelName);
+        FindObjectOfType<LevelSelectionController>()?.LoadLevel(m_levelName);
     }
 
     public void Disable()

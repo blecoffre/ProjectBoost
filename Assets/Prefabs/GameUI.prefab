@@ -118,7 +118,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3009753018572376958}
-        m_MethodName: RetryCurrentLevel
+        m_MethodName: ReloadCurrentLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -210,6 +210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8348403275723370287}
+  - component: {fileID: 1089481766608383273}
   m_Layer: 5
   m_Name: Container
   m_TagString: Untagged
@@ -239,6 +240,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1089481766608383273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2450764972464257206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205728ebd803a5940b8e02b75131a180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_startScale: {x: 0, y: 0, z: 0}
+  m_endScale: {x: 1, y: 1, z: 1}
+  m_animationTime: 0
+  m_popIn: 0
 --- !u!1 &2503775992243176902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,6 +1407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757ac7a7b8682d042bef64f8732fdc24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_pop: {fileID: 1089481766608383273}
   m_container: {fileID: 2450764972464257206}
   m_yourTimeText: {fileID: 4547672978930828734}
   m_currentRecord: {fileID: 2083832338672762386}

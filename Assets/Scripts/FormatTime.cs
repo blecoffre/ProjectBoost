@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Assets.Scripts
+namespace ProjectBoost
 {
     public class FormatTime
     {

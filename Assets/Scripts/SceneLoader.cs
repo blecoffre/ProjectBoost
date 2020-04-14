@@ -1,58 +1,64 @@
-﻿using System.Collections;
+﻿using ProjectBoost.Manager;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SceneLoader : MonoBehaviour
+namespace ProjectBoost
 {
-    [SerializeField]
-    private GameObject m_loadingBarContainer = default;
-    [SerializeField]
-    private Image m_loadingBarFill;
-    [SerializeField]
-
-    private AsyncOperation asyncLoadScene;
-
-    /// <summary>
-    /// Load scene async and open it after a certain amount of time
-    /// </summary>
-    /// <param name="sceneName"></param>
-    /// <param name="withProgressBar"></param>
-    /// <param name="timeAfterOpen"></param>
-
-
-    private void Start()
+    public class SceneLoader : MonoBehaviour
     {
-        StartCoroutine(LoadAsynchronously(LevelManager.LevelName, LevelManager.WithProgressBar, LevelManager.TimeBeforeOpen));
-    }
+        [SerializeField]
+        private GameObject m_loadingBarContainer = default;
+        [SerializeField]
+        private Image m_loadingBarFill;
+        [SerializeField]
 
-    private IEnumerator LoadAsynchronously(string levelName, bool withProgressBar, float timeBeforeOpen)
-    {
-        if (!withProgressBar)
-            m_loadingBarContainer?.SetActive(false);
+        private AsyncOperation asyncLoadScene;
 
-        float timer = 0f;
+        /// <summary>
+        /// Load scene async and open it after a certain amount of time
+        /// </summary>
+        /// <param name="sceneName"></param>
+        /// <param name="withProgressBar"></param>
+        /// <param name="timeAfterOpen"></param>
 
-        AsyncOperation operation = SceneManager.LoadSceneAsync(levelName);
-        operation.allowSceneActivation = false;
 
-        while (!operation.isDone)
+        private void Start()
         {
-            if (m_loadingBarFill && withProgressBar)
+            StartCoroutine(LoadAsynchronously(SceneUtility.SceneName, SceneUtility.WithProgressBar, SceneUtility.TimeBeforeOpen));
+        }
+
+        private IEnumerator LoadAsynchronously(string levelName, bool withProgressBar, float timeBeforeOpen)
+        {
+            if (!withProgressBar)
+                m_loadingBarContainer?.SetActive(false);
+
+            float timer = 0f;
+
+            AsyncOperation operation = SceneManager.LoadSceneAsync(levelName);
+            operation.allowSceneActivation = false;
+
+            while (!operation.isDone)
             {
-                float progress = Mathf.Clamp01(operation.progress / 0.9f);
-                m_loadingBarFill.fillAmount = progress;
-            }
+                if (m_loadingBarFill && withProgressBar)
+                {
+                    float progress = Mathf.Clamp01(operation.progress / 0.9f);
+                    m_loadingBarFill.fillAmount = progress;
+                }
 
-            timer += Time.deltaTime;
+                timer += Time.deltaTime;
 
 
-            if (timer > timeBeforeOpen)
-            {
-                operation.allowSceneActivation = true;
+                if (timer > timeBeforeOpen)
+                {
+                    operation.allowSceneActivation = true;
+                    SceneUtility.IsCurrentlyLoadingScene = false;
+                }
+                yield return null;
             }
             yield return null;
         }
-        yield return null;
     }
+
 }
