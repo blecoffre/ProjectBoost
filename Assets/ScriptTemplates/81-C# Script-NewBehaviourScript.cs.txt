@@ -1,0 +1,13 @@
+using UnityEngine;
+
+namespace ProjectBoost
+{
+    public class #SCRIPTNAME# : MonoBehaviour
+    {
+        void Start()
+        {
+            #NOTRIM#
+        }
+    }
+}
+
