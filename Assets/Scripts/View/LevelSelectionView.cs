@@ -20,7 +20,7 @@ namespace ProjectBoost.View
             for (int i = 0; i < levels.Count; i++)
             {
                 LevelBlocView view = Instantiate(m_levelBlocViewPrefab, m_blocViewContainer);
-                view.Initialize(levels[i], LevelManager.GetLevelRecordAsString(levels[i]));
+                view.Initialize(levels[i], LevelManager.GetLevelRecordAsString(levels[i]), LevelManager.IsLevelUnlocked(levels[i]));
                 m_views[i] = view;
             }
         }

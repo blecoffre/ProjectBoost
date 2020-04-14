@@ -13,7 +13,7 @@ namespace ProjectBoost.Controller
         private UnityAction m_loadNextLevelAction = null;
         private UnityAction m_reloadLevelAction = null;
         private UnityAction<object> m_setCurrentTimeAction = null;
-
+        private UnityAction m_unlockLevelAction = null;
 
         private void Start()
         {
@@ -25,6 +25,9 @@ namespace ProjectBoost.Controller
 
             m_setCurrentTimeAction += SetCurrentLevelTime;
             EventManager.StartListening(EventsName.SendScoreTime, m_setCurrentTimeAction);
+
+            m_unlockLevelAction += UnlockNextLevel;
+            EventManager.StartListening(EventsName.UnlockNextLevel, m_unlockLevelAction);
         }
 
         private void OnDisable()
@@ -32,6 +35,7 @@ namespace ProjectBoost.Controller
             EventManager.StopListening(EventsName.LoadNextLevel, m_loadNextLevelAction);
             EventManager.StopListening(EventsName.ReloadLevel, m_reloadLevelAction);
             EventManager.StopListening(EventsName.SendScoreTime, m_setCurrentTimeAction);
+            EventManager.StopListening(EventsName.UnlockNextLevel, m_unlockLevelAction);
         }
 
         private void LoadNextLevel()
@@ -47,6 +51,11 @@ namespace ProjectBoost.Controller
         private void SetCurrentLevelTime(object time)
         {
             LevelManager.SetCurrentLevelTime((float)time);
+        }
+
+        private void UnlockNextLevel()
+        {
+            LevelManager.UnlockNextLevel();
         }
     }
 }

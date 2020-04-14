@@ -10,11 +10,11 @@ namespace ProjectBoost
 
             if (time.TotalMinutes > 1)
             {
-                return (string.Format("{0}:{1}.{2}", (int)time.TotalMinutes, time.Seconds, time.Milliseconds));
+                return (string.Format("{0}:{1}.{2}", (int)time.TotalMinutes, time.Seconds, (time.Milliseconds /10)));
             }
             else
             {
-                return (string.Format("{0}.{1}", time.Seconds, time.Milliseconds));
+                return (string.Format("{0}.{1}", time.Seconds, (time.Milliseconds /10)));
             }
         }
 

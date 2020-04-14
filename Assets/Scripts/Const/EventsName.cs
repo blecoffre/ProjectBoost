@@ -12,6 +12,6 @@ namespace ProjectBoost.Const
         public const string LoadNextLevel = "LoadNextLevel";
         public const string ReloadLevel = "ReloadLevel";
         public const string OpenMenu = "OpenMenu";
-        public const string SaveRecord = "SaveRecord";
+        public const string UnlockNextLevel = "UnlockNextLevel";
     }
 }

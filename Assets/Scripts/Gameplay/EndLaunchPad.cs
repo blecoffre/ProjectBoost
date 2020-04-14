@@ -11,6 +11,7 @@ namespace ProjectBoost.Gameplay
             if (collision.gameObject.CompareTag("Player"))
             {
                 EventManager.TriggerEvent(EventsName.StopPlaying, false);
+                EventManager.TriggerEvent(EventsName.UnlockNextLevel);
             }
         }
     }

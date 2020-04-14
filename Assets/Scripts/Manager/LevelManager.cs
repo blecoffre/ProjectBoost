@@ -80,5 +80,28 @@ namespace ProjectBoost.Manager
                 SaveManager.SaveLevelTimeRecordToPlayerPrefs(m_currentLevelTime);
             }
         }
+
+        public static void UnlockNextLevel()
+        {
+            string nextLevelName = LevelUtility.GetNextLevelName();
+
+            if (nextLevelName != "No More Levels")
+                SaveManager.SaveLevelUnlocked(nextLevelName);
+        }
+
+        public static bool IsLevelUnlocked(string levelName)
+        {
+            return SaveManager.CheckIfLevelIsUnlocked(levelName);
+        }
+
+        public static bool IsNextLevelUnlocked()
+        {
+            string nextLevelName = LevelUtility.GetNextLevelName();
+
+            if (nextLevelName != "No More Levels")
+                return SaveManager.CheckIfLevelIsUnlocked(nextLevelName);
+
+            return false;
+        }
     }
 }

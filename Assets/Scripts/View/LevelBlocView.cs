@@ -6,23 +6,32 @@ using ProjectBoost.Controller;
 
 public class LevelBlocView : MonoBehaviour
 {
-    [SerializeField] private Button m_button;
-
+    [SerializeField] private GameObject m_unlockedContainer;
+    [SerializeField] private GameObject m_lockContainer = default;
     [SerializeField] private TextMeshProUGUI m_levelNameText = default;
     [SerializeField] private TextMeshProUGUI m_bestTimeText = default;
 
     private string m_levelName;
 
-    public void Initialize(string levelName, string record)
+    public void Initialize(string levelName, string record, bool isUnlock)
     {
         m_levelName = levelName;
         m_levelNameText?.SetText(m_levelName);
         m_bestTimeText?.SetText(record);
 
-        m_button.onClick.AddListener(OpenLevel);
+        if (isUnlock)
+        {
+            m_unlockedContainer?.SetActive(true);
+            m_lockContainer?.SetActive(false);
+        }
+        else
+        {
+            m_unlockedContainer?.SetActive(false);
+            m_lockContainer?.SetActive(true);
+        }
     }
 
-    private void OpenLevel()
+    public void OpenLevel()
     {
         FindObjectOfType<LevelSelectionController>()?.LoadLevel(m_levelName);
     }

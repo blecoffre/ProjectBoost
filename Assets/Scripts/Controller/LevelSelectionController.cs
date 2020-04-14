@@ -15,6 +15,7 @@ namespace ProjectBoost.Controller
 
         private void Initialize()
         {
+            System.Collections.Generic.List<string> truc = LevelUtility.GetAvailableLevels();
             m_levelSelectionView.Populate(LevelUtility.GetAvailableLevels());
         }
 
