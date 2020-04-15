@@ -15,26 +15,30 @@ namespace ProjectBoost.Gameplay
 
         [Header("AudioClips")]
         [SerializeField]
-        private AudioClip m_mainEngineClip;
+        private AudioClip m_mainEngineClip = default;
         [SerializeField]
-        private AudioClip m_deathClip;
+        private AudioClip m_deathClip = default;
         [SerializeField]
-        private AudioClip m_successClip;
+        private AudioClip m_successClip = default;
 
         [Header("FX Particles Systems")]
         [SerializeField]
-        private ParticleSystem m_mainEngineParticles;
+        private ParticleSystem m_mainEngineParticles = default;
         [SerializeField]
-        private ParticleSystem m_deathParticles;
+        private ParticleSystem m_deathParticles = default;
         [SerializeField]
-        private ParticleSystem m_successParticles;
+        private ParticleSystem m_successParticles = default;
+
+        [SerializeField] private string RocketPartAllowedToLand = default;
 
         private Rigidbody m_rigidbody;
         private AudioSource m_audioSource;
 
         private bool m_isCollisionEnabled = true;
-
         private bool m_isAlive = true;
+        private Vector3 m_velocity;
+        private bool m_noRotationApplied = true;
+
 
         private void Start()
         {
@@ -50,12 +54,13 @@ namespace ProjectBoost.Gameplay
             m_audioSource = GetComponent<AudioSource>();
             if (!m_audioSource)
                 SimpleErrorHandlerManager.MissingComponentError(typeof(AudioSource), gameObject.name);
-
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
-            ProcessInput();
+            m_velocity = m_rigidbody.velocity;
+
+            ProcessInput(); //Put Inputs on update instead of FixedUpdate to improve Rotation Reactivity and Behaviour
 
             if (Debug.isDebugBuild)
                 Cheat();
@@ -102,7 +107,10 @@ namespace ProjectBoost.Gameplay
 
         private void RespondToRotateInput()
         {
-            if (m_rigidbody)
+            if (m_rigidbody.velocity.y <= 0.2 && m_rigidbody.velocity.y >= -0.2) //block rotation if no velocity
+                return;
+
+            if (m_rigidbody && !m_noRotationApplied)
                 m_rigidbody.angularVelocity = Vector3.zero; //remove rotation due to physics
 
             float rotationSpeed = m_rcsThrust * Time.deltaTime;
@@ -111,13 +119,16 @@ namespace ProjectBoost.Gameplay
             {
                 //Left
                 transform.Rotate(Vector3.forward * rotationSpeed);
+                m_noRotationApplied = false;
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 //Right
                 transform.Rotate(Vector3.back * rotationSpeed);
+                m_noRotationApplied = false;
             }
-
+            else
+                m_noRotationApplied = true;
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -130,10 +141,14 @@ namespace ProjectBoost.Gameplay
             switch (collision.gameObject.tag)
             {
                 case "Friendly":
-                    //Do funny stuff ?
+                    if (!SafeLanding(collision))
+                        StartDeath();
                     break;
                 case "Finish":
-                    StartSuccess();
+                    if (SafeLanding(collision))
+                        StartSuccess();
+                    else
+                        StartDeath();
                     break;
                 default:
                     StartDeath();
@@ -154,6 +169,32 @@ namespace ProjectBoost.Gameplay
             m_isAlive = false;
             PlayClip(m_deathClip);
             PlayParticles(m_deathParticles);
+        }
+
+        public float GetCollisionAngle(Transform hitobjectTransform, Collider collider, Vector3 contactPoint)
+        {
+            Vector3 collidertWorldPosition = new Vector2(hitobjectTransform.position.x, hitobjectTransform.position.y);
+            Vector3 pointB = contactPoint - collidertWorldPosition;
+
+            float theta = Mathf.Atan2(pointB.x, pointB.y);
+            float angle = (360 - ((theta * 180) / Mathf.PI)) % 360;
+            return angle;
+        }
+
+        private bool SafeLanding(Collision collision)
+        {
+            if (string.IsNullOrEmpty(RocketPartAllowedToLand))
+                Debug.LogError("RocketPartAllowedToLand is null or empty");
+
+
+            Vector3 dir = (transform.up - collision.transform.up).normalized;
+
+            if (collision.contacts[0].thisCollider.transform.name == RocketPartAllowedToLand && dir.y > -0.4f) //Force player to land more properly
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private void PlayClip(AudioClip clip)

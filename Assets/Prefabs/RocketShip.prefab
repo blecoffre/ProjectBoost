@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1350821281567410426}
   - component: {fileID: 8130115361530902506}
   m_Layer: 0
-  m_Name: StarboardBoosterRight
+  m_Name: StarboardBooster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 7368432021091340683}
   - component: {fileID: 8592084997987523631}
   m_Layer: 0
-  m_Name: StarboardBoosterLeft
+  m_Name: StarboardBooster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -534,13 +534,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_rcsThrust: 300
   m_mainThrust: 1000
-  m_timeBeforeLoadingScene: 1
   m_mainEngineClip: {fileID: 8300000, guid: 442e5565cc3e18b4493c24cd0713247e, type: 3}
   m_deathClip: {fileID: 8300000, guid: bfd9e176032063f42bb635c4d53c8648, type: 3}
   m_successClip: {fileID: 8300000, guid: 9cd68c271d9bf924cb96b11a7acecdc0, type: 3}
   m_mainEngineParticles: {fileID: 341225804057589716}
   m_deathParticles: {fileID: 5199421089092875049}
   m_successParticles: {fileID: 3054205313650547737}
+  RocketPartAllowedToLand: StarboardBooster
 --- !u!1001 &433344481180785320
 PrefabInstance:
   m_ObjectHideFlags: 0
