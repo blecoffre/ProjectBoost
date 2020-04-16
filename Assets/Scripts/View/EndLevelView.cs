@@ -16,7 +16,6 @@ namespace ProjectBoost.View
         [SerializeField] private TextMeshProUGUI m_yourTimeText = default;
         [SerializeField] private TextMeshProUGUI m_currentRecord = default;
         [SerializeField] private GameObject m_newRecordContainer = default;
-        [SerializeField] private Button m_nextLevelButton = default;
 
         private UnityAction m_levelCompleteAction = null;
         private UnityAction m_playerDieAction = null;
@@ -24,7 +23,7 @@ namespace ProjectBoost.View
         private void Start()
         {
             m_levelCompleteAction += InitializeLevelComplete;
-            EventManager.StartListening(EventsName.OpenEndLevelView, m_levelCompleteAction);
+            EventManager.StartListening(EventsName.LevelComplete, m_levelCompleteAction);
 
             m_playerDieAction += InitializePlayerDie;
             EventManager.StartListening(EventsName.PlayerDie, m_playerDieAction);
@@ -32,7 +31,7 @@ namespace ProjectBoost.View
 
         private void OnDisable()
         {
-            EventManager.StopListening(EventsName.OpenEndLevelView, m_levelCompleteAction);
+            EventManager.StopListening(EventsName.LevelComplete, m_levelCompleteAction);
             EventManager.StopListening(EventsName.PlayerDie, m_playerDieAction);
         }
 
@@ -51,8 +50,6 @@ namespace ProjectBoost.View
 
             SetLevelName();
 
-            m_nextLevelButton.interactable = true; //If player reach the end, next level is automatically unlocked
-
             m_container?.SetActive(true);
             m_pop.PlayPopIn();
         }
@@ -66,9 +63,6 @@ namespace ProjectBoost.View
 
             SetLevelName();
 
-            if (m_nextLevelButton)
-                m_nextLevelButton.interactable = LevelManager.IsNextLevelUnlocked();
-
             m_container?.SetActive(true);
             m_pop.PlayPopIn();
         }
@@ -77,21 +71,5 @@ namespace ProjectBoost.View
         {
             m_levelName?.SetText(LevelUtility.GetCurrentLevelName());
         }
-
-        public void BackToMenu()
-        {
-            SceneUtility.LoadSceneAsync(SceneNames.MainMenu);
-        }
-
-        public void ReloadCurrentLevel()
-        {
-            LevelManager.ReloadCurrentLevel();
-        }
-
-        public void OpenNextLevel()
-        {
-            LevelManager.LoadNextLevel();
-        }
     }
-
 }

@@ -8,14 +8,13 @@ namespace ProjectBoost.Controller
     {
         [SerializeField] private LevelSelectionView m_levelSelectionView = default;
 
-        private void Start()
+        private void OnEnable()
         {
             Initialize();
         }
 
         private void Initialize()
         {
-            System.Collections.Generic.List<string> truc = LevelUtility.GetAvailableLevels();
             m_levelSelectionView.Populate(LevelUtility.GetAvailableLevels());
         }
 

@@ -642,6 +642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7277171745334552178}
   - component: {fileID: -5359475235505067262}
+  - component: {fileID: 4748932547130881376}
   - component: {fileID: 3674961475670648924}
   m_Layer: 5
   m_Name: LevelButton
@@ -688,6 +689,18 @@ MonoBehaviour:
   m_lockContainer: {fileID: 4354078364857427366}
   m_levelNameText: {fileID: 7277171743692860498}
   m_bestTimeText: {fileID: 7820702901010324586}
+--- !u!114 &4748932547130881376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7277171745334552177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ec60ce7cd22c240b7d72eed5c75e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &3674961475670648924
 AudioSource:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 using ProjectBoost.Controller;
+using ProjectBoost.Manager;
 
 public class LevelBlocView : MonoBehaviour
 {

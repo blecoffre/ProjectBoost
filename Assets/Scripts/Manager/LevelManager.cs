@@ -74,7 +74,7 @@ namespace ProjectBoost.Manager
         /// </summary>
         private static void ProcessWithNewLevelTime()
         {
-            EventManager.TriggerEvent(EventsName.OpenEndLevelView);
+            EventManager.TriggerEvent(EventsName.LevelComplete);
             if (IsNewRecord())
             {
                 SaveManager.SaveLevelTimeRecordToPlayerPrefs(m_currentLevelTime);

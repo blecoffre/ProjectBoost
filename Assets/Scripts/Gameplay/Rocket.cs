@@ -1,6 +1,7 @@
 ﻿using ProjectBoost.Const;
 using ProjectBoost.Manager;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 namespace ProjectBoost.Gameplay
@@ -39,10 +40,18 @@ namespace ProjectBoost.Gameplay
         private Vector3 m_velocity;
         private bool m_noRotationApplied = true;
 
+        private UnityAction<object> m_gamePausedAction = null;
+        private bool m_isGamePaused = false;
+        private RigidbodyConstraints m_rigidbodyConstraints;
 
         private void Start()
         {
             GetAllRequiredComponents();
+
+            m_gamePausedAction += GamePaused;
+            EventManager.StartListening(EventsName.GamePause, m_gamePausedAction);
+
+            m_rigidbodyConstraints = m_rigidbody.constraints; //Get all constraints to reapplied them when game unpaused
         }
 
         private void GetAllRequiredComponents()
@@ -58,12 +67,15 @@ namespace ProjectBoost.Gameplay
 
         private void Update()
         {
-            m_velocity = m_rigidbody.velocity;
+            if (!m_isGamePaused)
+            {
+                m_velocity = m_rigidbody.velocity;
 
-            ProcessInput(); //Put Inputs on update instead of FixedUpdate to improve Rotation Reactivity and Behaviour
+                ProcessInput(); //Put Inputs on update instead of FixedUpdate to improve Rotation Reactivity and Behaviour
 
-            if (Debug.isDebugBuild)
-                Cheat();
+                if (Debug.isDebugBuild)
+                    Cheat();
+            }
         }
 
         private void ProcessInput()
@@ -246,6 +258,16 @@ namespace ProjectBoost.Gameplay
             {
                 m_isCollisionEnabled = !m_isCollisionEnabled;
             }
+        }
+
+        private void GamePaused(object isGamePaused)
+        {
+            if ((bool)isGamePaused)
+                m_rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            else
+                m_rigidbody.constraints = m_rigidbodyConstraints;
+
+            m_isGamePaused = (bool)isGamePaused;
         }
     }
 }
