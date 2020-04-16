@@ -380,6 +380,7 @@ GameObject:
   - component: {fileID: 4985615220074278279}
   - component: {fileID: 4426787139758662825}
   - component: {fileID: 6930398729115421208}
+  - component: {fileID: 7280252785271713530}
   m_Layer: 0
   m_Name: RocketShip
   m_TagString: Player
@@ -541,6 +542,18 @@ MonoBehaviour:
   m_deathParticles: {fileID: 5199421089092875049}
   m_successParticles: {fileID: 3054205313650547737}
   RocketPartAllowedToLand: StarboardBooster
+--- !u!114 &7280252785271713530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7381347786797909740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ec60ce7cd22c240b7d72eed5c75e4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &433344481180785320
 PrefabInstance:
   m_ObjectHideFlags: 0
