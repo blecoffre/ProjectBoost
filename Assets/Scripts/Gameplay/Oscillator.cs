@@ -3,6 +3,8 @@
 namespace ProjectBoost.Gameplay
 {
     [DisallowMultipleComponent]
+    [ExecuteInEditMode]
+
     public class Oscillator : MonoBehaviour
     {
         [SerializeField]
