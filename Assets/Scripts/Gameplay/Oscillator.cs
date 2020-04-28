@@ -3,7 +3,7 @@
 namespace ProjectBoost.Gameplay
 {
     [DisallowMultipleComponent]
-    [ExecuteInEditMode]
+    //[ExecuteInEditMode]
 
     public class Oscillator : MonoBehaviour
     {

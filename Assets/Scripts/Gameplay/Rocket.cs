@@ -129,12 +129,6 @@ namespace ProjectBoost.Gameplay
 
         private void RespondToRotateInput()
         {
-            if (m_rigidbody.velocity.y <= 0.2 && m_rigidbody.velocity.y >= -0.2) //block rotation if no velocity
-                return;
-
-            if (m_rigidbody && !m_noRotationApplied)
-                m_rigidbody.angularVelocity = Vector3.zero; //remove rotation due to physics
-
 #if !UNITY_ANDROID
             if (Input.GetKey(KeyCode.Q))
             {
@@ -151,14 +145,27 @@ namespace ProjectBoost.Gameplay
 #endif
         }
 
+            public bool IsRotationLock()
+        {
+            if (m_rigidbody.velocity.y <= 0.2 && m_rigidbody.velocity.y >= -0.2) //block rotation if no velocity
+                return true;
+
+            return false;
+        }
+
         /// <summary>
         /// Rotate the rocket on the left. Also called by MobileButtonController and triggered by UI Button
         /// </summary>
         public void RotateLeft()
         {
-            float rotationSpeed = m_rcsThrust * Time.deltaTime;
-            transform.Rotate(Vector3.forward * rotationSpeed);
-            m_noRotationApplied = false;
+            if (!IsRotationLock())
+            {
+                if (m_rigidbody && !m_noRotationApplied)
+                    m_rigidbody.angularVelocity = Vector3.zero; //remove rotation due to physics
+                float rotationSpeed = m_rcsThrust * Time.deltaTime;
+                transform.Rotate(Vector3.forward * rotationSpeed);
+                m_noRotationApplied = false;
+            }
         }
 
         /// <summary>
@@ -166,9 +173,14 @@ namespace ProjectBoost.Gameplay
         /// </summary>
         public void RotateRight()
         {
-            float rotationSpeed = m_rcsThrust * Time.deltaTime;
-            transform.Rotate(Vector3.back * rotationSpeed);
-            m_noRotationApplied = false;
+            if (!IsRotationLock())
+            {
+                if (m_rigidbody && !m_noRotationApplied)
+                    m_rigidbody.angularVelocity = Vector3.zero; //remove rotation due to physics
+                float rotationSpeed = m_rcsThrust * Time.deltaTime;
+                transform.Rotate(Vector3.back * rotationSpeed);
+                m_noRotationApplied = false;
+            }
         }
 
         private void OnCollisionEnter(Collision collision)
