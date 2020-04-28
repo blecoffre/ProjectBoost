@@ -89,6 +89,7 @@ namespace ProjectBoost.Gameplay
 
         private void RespondToThrustInput()
         {
+#if !UNITY_ANDROID
             if (Input.GetKey(KeyCode.Space))
             {
                 ApplyThrust();
@@ -97,21 +98,30 @@ namespace ProjectBoost.Gameplay
             {
                 StopApplyingThrust();
             }
+#endif
         }
 
-        private void ApplyThrust()
+        /// <summary>
+        /// Add force to move the rocket forward
+        /// </summary>
+        public void ApplyThrust()
         {
             float thrustForceThisFrame = m_mainThrust * Time.deltaTime;
             //Thrust
             m_rigidbody?.AddRelativeForce(Vector3.up * thrustForceThisFrame);
 
             if (m_audioSource && !m_audioSource.isPlaying)
+            {
                 PlayClip(m_mainEngineClip);
+            }
 
             PlayParticles(m_mainEngineParticles);
         }
 
-        private void StopApplyingThrust()
+        /// <summary>
+        /// Stop audio and particles
+        /// </summary>
+        public void StopApplyingThrust()
         {
             m_audioSource?.Stop();
             m_mainEngineParticles?.Stop();
@@ -125,22 +135,40 @@ namespace ProjectBoost.Gameplay
             if (m_rigidbody && !m_noRotationApplied)
                 m_rigidbody.angularVelocity = Vector3.zero; //remove rotation due to physics
 
-            float rotationSpeed = m_rcsThrust * Time.deltaTime;
-
+#if !UNITY_ANDROID
             if (Input.GetKey(KeyCode.Q))
             {
                 //Left
-                transform.Rotate(Vector3.forward * rotationSpeed);
-                m_noRotationApplied = false;
+                RotateLeft();
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 //Right
-                transform.Rotate(Vector3.back * rotationSpeed);
-                m_noRotationApplied = false;
+                RotateRight();
             }
             else
                 m_noRotationApplied = true;
+#endif
+        }
+
+        /// <summary>
+        /// Rotate the rocket on the left. Also called by MobileButtonController and triggered by UI Button
+        /// </summary>
+        public void RotateLeft()
+        {
+            float rotationSpeed = m_rcsThrust * Time.deltaTime;
+            transform.Rotate(Vector3.forward * rotationSpeed);
+            m_noRotationApplied = false;
+        }
+
+        /// <summary>
+        /// Rotate the rocket on the right. Also called by MobileButtonController and triggered by UI Button
+        /// </summary>
+        public void RotateRight()
+        {
+            float rotationSpeed = m_rcsThrust * Time.deltaTime;
+            transform.Rotate(Vector3.back * rotationSpeed);
+            m_noRotationApplied = false;
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -231,6 +259,7 @@ namespace ProjectBoost.Gameplay
                     m_mainEngineParticles?.Stop();
                 }
 
+                if(!particles.isPlaying)
                 particles?.Play();
             }
         }
