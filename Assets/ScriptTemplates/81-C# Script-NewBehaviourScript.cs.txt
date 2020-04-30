@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ProjectBoost
+namespace TrickyRocket
 {
     public class #SCRIPTNAME# : MonoBehaviour
     {
