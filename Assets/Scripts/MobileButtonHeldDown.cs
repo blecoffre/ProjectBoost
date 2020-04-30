@@ -1,9 +1,9 @@
-﻿using ProjectBoost.Manager;
+﻿using TrickyRocket.Manager;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace ProjectBoost.Gameplay
+namespace TrickyRocket.Gameplay
 {
     public class MobileButtonHeldDown :MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {

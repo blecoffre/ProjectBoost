@@ -1,9 +1,9 @@
-﻿using ProjectBoost.Const;
-using ProjectBoost.Manager;
-using ProjectBoost.UIExtension;
+﻿using TrickyRocket.Const;
+using TrickyRocket.Manager;
+using TrickyRocket.UIExtension;
 using UnityEngine;
 
-namespace ProjectBoost
+namespace TrickyRocket
 {
     public class SplashScreen : MonoBehaviour
     {

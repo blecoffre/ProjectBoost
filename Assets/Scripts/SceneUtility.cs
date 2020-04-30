@@ -1,8 +1,8 @@
-﻿using ProjectBoost.Const;
+﻿using TrickyRocket.Const;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ProjectBoost
+namespace TrickyRocket
 {
     class SceneUtility
     {

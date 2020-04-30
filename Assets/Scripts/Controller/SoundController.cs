@@ -1,8 +1,8 @@
-﻿using ProjectBoost.Manager;
-using ProjectBoost.View;
+﻿using TrickyRocket.Manager;
+using TrickyRocket.View;
 using UnityEngine;
 
-namespace ProjectBoost.Controller
+namespace TrickyRocket.Controller
 {
     public class SoundController : MonoBehaviour
     {

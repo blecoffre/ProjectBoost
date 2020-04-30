@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ProjectBoost
+namespace TrickyRocket
 {
     //Use as a "tag" to separate Music Source and Sound Effect Source
     //May have some extra functionnality later

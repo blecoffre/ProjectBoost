@@ -1,6 +1,6 @@
-﻿using ProjectBoost.Const;
+﻿using TrickyRocket.Const;
 
-namespace ProjectBoost.Manager
+namespace TrickyRocket.Manager
 {
     public class LevelManager
     {

@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
-using ProjectBoost.Manager;
-using ProjectBoost.Const;
+using TrickyRocket.Manager;
+using TrickyRocket.Const;
 
-namespace ProjectBoost.Gameplay
+namespace TrickyRocket.Gameplay
 {
     public class LevelTimer : MonoBehaviour
     {

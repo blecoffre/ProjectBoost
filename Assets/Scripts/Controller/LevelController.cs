@@ -1,11 +1,11 @@
-﻿using ProjectBoost.Const;
-using ProjectBoost.Manager;
+﻿using TrickyRocket.Const;
+using TrickyRocket.Manager;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ProjectBoost.Controller
+namespace TrickyRocket.Controller
 {
     public class LevelController : MonoBehaviour
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace ProjectBoost.Const
+namespace TrickyRocket.Const
 {
     public class PlayerPrefsKey
     {

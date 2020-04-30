@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace ProjectBoost.UIExtension
+namespace TrickyRocket.UIExtension
 {
     [ExecuteInEditMode]
     public class PopInAndOutUI : MonoBehaviour

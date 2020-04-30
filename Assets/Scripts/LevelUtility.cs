@@ -1,9 +1,9 @@
-﻿using ProjectBoost.Const;
+﻿using TrickyRocket.Const;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine.SceneManagement;
 
-namespace ProjectBoost
+namespace TrickyRocket
 {
     class LevelUtility
     {

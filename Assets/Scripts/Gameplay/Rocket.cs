@@ -1,10 +1,10 @@
-﻿using ProjectBoost.Const;
-using ProjectBoost.Manager;
+﻿using TrickyRocket.Const;
+using TrickyRocket.Manager;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-namespace ProjectBoost.Gameplay
+namespace TrickyRocket.Gameplay
 {
     public class Rocket : MonoBehaviour
     {

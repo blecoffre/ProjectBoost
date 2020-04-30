@@ -1,8 +1,8 @@
-﻿using ProjectBoost.Manager;
+﻿using TrickyRocket.Manager;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ProjectBoost.View
+namespace TrickyRocket.View
 {
     class LevelSelectionView : MonoBehaviour
     {

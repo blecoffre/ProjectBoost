@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ProjectBoost.Gameplay
+namespace TrickyRocket.Gameplay
 {
     public class RestartLevel : MonoBehaviour
     {

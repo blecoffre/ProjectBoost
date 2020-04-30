@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
-using ProjectBoost.UIExtension;
-using ProjectBoost.Const;
-using ProjectBoost.Manager;
+using TrickyRocket.UIExtension;
+using TrickyRocket.Const;
+using TrickyRocket.Manager;
 using UnityEngine.UI;
 
-namespace ProjectBoost.View
+namespace TrickyRocket.View
 {
     public class EndLevelView : MonoBehaviour
     {

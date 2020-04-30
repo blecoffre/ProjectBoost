@@ -1,8 +1,8 @@
-﻿using ProjectBoost.Const;
-using ProjectBoost.Manager;
+﻿using TrickyRocket.Const;
+using TrickyRocket.Manager;
 using UnityEngine;
 
-namespace ProjectBoost
+namespace TrickyRocket
 {
     public class PauseController : MonoBehaviour
     {

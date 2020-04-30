@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProjectBoost
+namespace TrickyRocket
 {
     public class FormatTime
     {

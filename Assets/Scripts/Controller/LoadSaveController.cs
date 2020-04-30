@@ -1,7 +1,7 @@
-﻿using ProjectBoost.Manager;
+﻿using TrickyRocket.Manager;
 using UnityEngine;
 
-namespace ProjectBoost
+namespace TrickyRocket
 {
     public class LoadSaveController : MonoBehaviour
     {

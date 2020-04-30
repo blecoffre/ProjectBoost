@@ -1,5 +1,5 @@
 ﻿
-namespace ProjectBoost.Manager
+namespace TrickyRocket.Manager
 {
     public class SoundManager
     {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace ProjectBoost.View
+namespace TrickyRocket.View
 {
     public class SoundView : MonoBehaviour
     {

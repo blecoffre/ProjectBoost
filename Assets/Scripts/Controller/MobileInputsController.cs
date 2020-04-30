@@ -1,7 +1,7 @@
-﻿using ProjectBoost.Gameplay;
+﻿using TrickyRocket.Gameplay;
 using UnityEngine;
 
-namespace ProjectBoost.Controller
+namespace TrickyRocket.Controller
 {
     public class MobileInputsController : MonoBehaviour
     {

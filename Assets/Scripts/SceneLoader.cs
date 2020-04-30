@@ -1,10 +1,10 @@
-﻿using ProjectBoost.Manager;
+﻿using TrickyRocket.Manager;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace ProjectBoost
+namespace TrickyRocket
 {
     public class SceneLoader : MonoBehaviour
     {

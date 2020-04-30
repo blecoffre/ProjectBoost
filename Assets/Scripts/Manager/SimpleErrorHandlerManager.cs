@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ProjectBoost.Manager
+namespace TrickyRocket.Manager
 {
     public class SimpleErrorHandlerManager : MonoBehaviour
     {

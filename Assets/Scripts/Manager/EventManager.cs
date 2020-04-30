@@ -9,7 +9,7 @@ using UnityEngine.Events;
 public class UnityOneArgEvent : UnityEvent<object> { }
 public class UnityTwoArgsEvent : UnityEvent<object, object> { };
 
-namespace ProjectBoost.Manager
+namespace TrickyRocket.Manager
 {
     // Event management script for creating/removing listeners, and triggering.
     public class EventManager : MonoBehaviour

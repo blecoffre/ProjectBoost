@@ -1,8 +1,8 @@
-﻿using ProjectBoost.Const;
+﻿using TrickyRocket.Const;
 using System;
 using UnityEngine;
 
-namespace ProjectBoost.Manager
+namespace TrickyRocket.Manager
 {
     public class SaveManager
     {

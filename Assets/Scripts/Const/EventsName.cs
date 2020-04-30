@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ProjectBoost.Const
+namespace TrickyRocket.Const
 {
     public class EventsName : MonoBehaviour
     {

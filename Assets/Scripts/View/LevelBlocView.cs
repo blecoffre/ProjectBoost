@@ -2,8 +2,8 @@
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
-using ProjectBoost.Controller;
-using ProjectBoost.Manager;
+using TrickyRocket.Controller;
+using TrickyRocket.Manager;
 
 public class LevelBlocView : MonoBehaviour
 {

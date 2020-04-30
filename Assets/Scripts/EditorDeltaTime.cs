@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace ProjectBoost
+namespace TrickyRocket
 {
     [ExecuteInEditMode]
     public class EditorDeltaTime : MonoBehaviour

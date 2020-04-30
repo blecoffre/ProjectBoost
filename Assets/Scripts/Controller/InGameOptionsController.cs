@@ -1,9 +1,9 @@
-﻿using ProjectBoost.Const;
-using ProjectBoost.Manager;
+﻿using TrickyRocket.Const;
+using TrickyRocket.Manager;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ProjectBoost
+namespace TrickyRocket
 {
     public class InGameOptionsController : MonoBehaviour
     {
