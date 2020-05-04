@@ -15,8 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneLoader.unity
     guid: d7451d6f1de41f540b5a8c01cd845dc2
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/TestScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 9770de1db92561d48b6c71e8914f65ff
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: eb0584b4989c7974c87da43f0455deb8
@@ -32,4 +35,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 6.unity
     guid: 6f43847353b05d749a2ac8b522dd253c
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 4c30266a2439fb74d9368b46936422e5,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 629ef776c321a95459da0cbe7eb2edee,
+      type: 2}

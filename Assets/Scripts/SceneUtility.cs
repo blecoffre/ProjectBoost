@@ -1,4 +1,5 @@
 ﻿using TrickyRocket.Const;
+using TrickyRocket.Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +18,15 @@ namespace TrickyRocket
             SceneName = sceneName;
             WithProgressBar = withProgressBar;
             TimeBeforeOpen = timeBeforeOpen;
+
+            if (!InAppPurchasingManager.Instance.IsNoMoreAdsPurchased())
+            {
+                if (sceneName.ToLower().Contains("level")) //If loaded scene is a level, increment count before next ad
+                    AdsManager.Instance.IncrementCountBeforeNextAds();
+
+                if (AdsManager.Instance.IsTimeForInterstitialAd())
+                    AdsManager.Instance.ShowInterstitialAd();
+            }
 
             if (!IsCurrentlyLoadingScene)
                 SceneManager.LoadScene(SceneNames.SceneLoader, LoadSceneMode.Additive);
