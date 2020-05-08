@@ -3,7 +3,7 @@
 namespace TrickyRocket.Gameplay
 {
     [DisallowMultipleComponent]
-    [ExecuteInEditMode]
+    //[ExecuteInEditMode]
     public class Rotator : MonoBehaviour
     {
         private enum Axis
