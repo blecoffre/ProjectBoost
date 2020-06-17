@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine.SceneManagement;
 using TrickyRocket.Manager;
+using UnityEngine.AddressableAssets;
 
 namespace TrickyRocket
 {

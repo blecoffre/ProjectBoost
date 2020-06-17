@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: UIPrefabs
+  m_EditorClassIdentifier: 
+  m_GroupName: UIPrefabs
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4008ca8d3ad572446980fc542f8bfc34
+  m_SerializeEntries:
+  - m_GUID: 13856beb45668c64f99c8e6a9d9cdbd3
+    m_Address: Assets/Prefabs/OptionsContainer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Prefab
+    m_MainAsset: {fileID: 1602133927496551477, guid: 13856beb45668c64f99c8e6a9d9cdbd3,
+      type: 3}
+    m_TargetAsset: {fileID: 1602133927496551477, guid: 13856beb45668c64f99c8e6a9d9cdbd3,
+      type: 3}
+  - m_GUID: 457f2789c41e65d498a083a8249f34f5
+    m_Address: Assets/Prefabs/LevelButton.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Prefab
+    m_MainAsset: {fileID: 7277171745334552177, guid: 457f2789c41e65d498a083a8249f34f5,
+      type: 3}
+    m_TargetAsset: {fileID: 7277171745334552177, guid: 457f2789c41e65d498a083a8249f34f5,
+      type: 3}
+  - m_GUID: 4a749052d46c16a4cac4061648e058cf
+    m_Address: Assets/Prefabs/SoundUI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Prefab
+    m_MainAsset: {fileID: 6295379714514920898, guid: 4a749052d46c16a4cac4061648e058cf,
+      type: 3}
+    m_TargetAsset: {fileID: 6295379714514920898, guid: 4a749052d46c16a4cac4061648e058cf,
+      type: 3}
+  - m_GUID: 81fc0e0665bd7cf46aafc5c15f8fa275
+    m_Address: Assets/Prefabs/MenuUI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Prefab
+    m_MainAsset: {fileID: 5298420632367586199, guid: 81fc0e0665bd7cf46aafc5c15f8fa275,
+      type: 3}
+    m_TargetAsset: {fileID: 5298420632367586199, guid: 81fc0e0665bd7cf46aafc5c15f8fa275,
+      type: 3}
+  - m_GUID: 8426dc25abc2fd74892db4036f2aa34d
+    m_Address: Assets/Prefabs/NeededInAllLevels/GameUI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Prefab
+    m_MainAsset: {fileID: 6800343949634082827, guid: 8426dc25abc2fd74892db4036f2aa34d,
+      type: 3}
+    m_TargetAsset: {fileID: 6800343949634082827, guid: 8426dc25abc2fd74892db4036f2aa34d,
+      type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a506c789ffabbe2498b469a06d9417fe, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 65109f205459ba74a973ba0463fcc171, type: 2}
+    - {fileID: 11400000, guid: dc9e45fba9cb3fd4f87bb551d54cec1a, type: 2}

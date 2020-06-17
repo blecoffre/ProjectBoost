@@ -14,5 +14,6 @@ namespace TrickyRocket.Const
         public const string OpenMenu = "OpenMenu";
         public const string UnlockNextLevel = "UnlockNextLevel";
         public const string GamePause = "GamePause";
+        public const string UpdateDone = "UpdateDone";
     }
 }

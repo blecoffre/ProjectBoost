@@ -16,12 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 3a4e58a36933a7f45b41e845cddc844d
-  m_SerializeEntries:
-  - m_GUID: d4332959b6da0874a95f2c14738a79f2
-    m_Address: Assets/Models/UIAtlas.spriteatlas
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_mainAssetType: 
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a506c789ffabbe2498b469a06d9417fe, type: 2}
   m_SchemaSet:

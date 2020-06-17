@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Materials
+  m_EditorClassIdentifier: 
+  m_GroupName: Materials
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9235730992efcc4458076e8aa0a85928
+  m_SerializeEntries:
+  - m_GUID: 13694378aa6ce3647a98982cbf52bbcb
+    m_Address: Assets/Materials/LaunchPad.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: 13694378aa6ce3647a98982cbf52bbcb, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: 13694378aa6ce3647a98982cbf52bbcb, type: 2}
+  - m_GUID: 2162078285cf17c46922224dbfaa9b31
+    m_Address: Assets/Materials/Obstacle.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: 2162078285cf17c46922224dbfaa9b31, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: 2162078285cf17c46922224dbfaa9b31, type: 2}
+  - m_GUID: 2c1dcc27dd8e1fa4b905c9d231f22872
+    m_Address: Assets/Materials/CristalObstacle.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: 2c1dcc27dd8e1fa4b905c9d231f22872, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: 2c1dcc27dd8e1fa4b905c9d231f22872, type: 2}
+  - m_GUID: 68f4edf1224aa3a42a3cdb06cf213689
+    m_Address: Assets/Materials/ShipMetal.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: 68f4edf1224aa3a42a3cdb06cf213689, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: 68f4edf1224aa3a42a3cdb06cf213689, type: 2}
+  - m_GUID: 773596ac454eaca469f01500ec492e5e
+    m_Address: Assets/Materials/Earth.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: 773596ac454eaca469f01500ec492e5e, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: 773596ac454eaca469f01500ec492e5e, type: 2}
+  - m_GUID: 79ddf6b6167856743aae555d18516b93
+    m_Address: Assets/Materials/RocketV2/V2Booster 1.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: 79ddf6b6167856743aae555d18516b93, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: 79ddf6b6167856743aae555d18516b93, type: 2}
+  - m_GUID: 7bd562aca4904524a875850c1c5cacec
+    m_Address: Assets/Materials/LightMaterial.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: 7bd562aca4904524a875850c1c5cacec, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: 7bd562aca4904524a875850c1c5cacec, type: 2}
+  - m_GUID: 817998fbce780c94290643229be84a4a
+    m_Address: Assets/Materials/ShipNose.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: 817998fbce780c94290643229be84a4a, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: 817998fbce780c94290643229be84a4a, type: 2}
+  - m_GUID: 995603e12e491e248918a0e968b41295
+    m_Address: Assets/Materials/RocketV2/V2Nose.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: 995603e12e491e248918a0e968b41295, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: 995603e12e491e248918a0e968b41295, type: 2}
+  - m_GUID: 9d0525ff7c03c4f4a8cff119529514ce
+    m_Address: Assets/Materials/Pike.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: 9d0525ff7c03c4f4a8cff119529514ce, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: 9d0525ff7c03c4f4a8cff119529514ce, type: 2}
+  - m_GUID: b9bfa06d0b8771d4ca134e267b082f3b
+    m_Address: Assets/Materials/RocketV2/V2Body.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: b9bfa06d0b8771d4ca134e267b082f3b, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: b9bfa06d0b8771d4ca134e267b082f3b, type: 2}
+  - m_GUID: c267b0917e03c714794e9f55720be413
+    m_Address: Assets/Materials/RocketV2/V2Body2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: c267b0917e03c714794e9f55720be413, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: c267b0917e03c714794e9f55720be413, type: 2}
+  - m_GUID: cf86f0bae06611447a7ba687ae026d16
+    m_Address: Assets/Materials/ShipBooster.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: cf86f0bae06611447a7ba687ae026d16, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: cf86f0bae06611447a7ba687ae026d16, type: 2}
+  - m_GUID: d2133fb28ff90d24995480c64a70f3f5
+    m_Address: Assets/Materials/LandPad.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: d2133fb28ff90d24995480c64a70f3f5, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: d2133fb28ff90d24995480c64a70f3f5, type: 2}
+  - m_GUID: d21b8852343198842b4cc1be9cfb567e
+    m_Address: Assets/Materials/RocketV2/V2Foot.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: d21b8852343198842b4cc1be9cfb567e, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: d21b8852343198842b4cc1be9cfb567e, type: 2}
+  - m_GUID: d743e7341006fd748917f54a16dcf11d
+    m_Address: Assets/Materials/CaveWall.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: d743e7341006fd748917f54a16dcf11d, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: d743e7341006fd748917f54a16dcf11d, type: 2}
+  - m_GUID: f1b8df0b73dec6446bfa6977f7ce7626
+    m_Address: Assets/Materials/Black.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Remote
+    - Material
+    m_MainAsset: {fileID: 2100000, guid: f1b8df0b73dec6446bfa6977f7ce7626, type: 2}
+    m_TargetAsset: {fileID: 2100000, guid: f1b8df0b73dec6446bfa6977f7ce7626, type: 2}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a506c789ffabbe2498b469a06d9417fe, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b3997b4b0d0d740448c11ac0dcc37bb1, type: 2}
+    - {fileID: 11400000, guid: a3780adda776c9c458068a976b179e43, type: 2}

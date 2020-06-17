@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: LevelPrefabs
+  m_EditorClassIdentifier: 
+  m_GroupName: LevelPrefabs
+  m_Data:
+    m_SerializedData: []
+  m_GUID: cd65c70e8170fcf4694ef05181b4d679
+  m_SerializeEntries:
+  - m_GUID: 21802686c6aeec64f8839503a71b7435
+    m_Address: Assets/Prefabs/NeededInAllLevels/WindPlayer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    - Remote
+    m_MainAsset: {fileID: 1947498654771191763, guid: 21802686c6aeec64f8839503a71b7435,
+      type: 3}
+    m_TargetAsset: {fileID: 1947498654771191763, guid: 21802686c6aeec64f8839503a71b7435,
+      type: 3}
+  - m_GUID: 23b45e48cd51ff740b8940305bfe8fa1
+    m_Address: Assets/Prefabs/NeededInAllLevels/Terrain.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    - Remote
+    m_MainAsset: {fileID: 4467765261676325106, guid: 23b45e48cd51ff740b8940305bfe8fa1,
+      type: 3}
+    m_TargetAsset: {fileID: 4467765261676325106, guid: 23b45e48cd51ff740b8940305bfe8fa1,
+      type: 3}
+  - m_GUID: 269a9633b6d465a41b2241c05169bb3f
+    m_Address: Assets/Prefabs/NeededInAllLevels/EventManager.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    - Remote
+    m_MainAsset: {fileID: 3357215499917514738, guid: 269a9633b6d465a41b2241c05169bb3f,
+      type: 3}
+    m_TargetAsset: {fileID: 3357215499917514738, guid: 269a9633b6d465a41b2241c05169bb3f,
+      type: 3}
+  - m_GUID: 42355d32f5294ec4a96a94b16c905ca1
+    m_Address: Assets/Prefabs/NeededInAllLevels/LaunchPad.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    - Remote
+    m_MainAsset: {fileID: 3594772727585439727, guid: 42355d32f5294ec4a96a94b16c905ca1,
+      type: 3}
+    m_TargetAsset: {fileID: 3594772727585439727, guid: 42355d32f5294ec4a96a94b16c905ca1,
+      type: 3}
+  - m_GUID: 537217c0c134b9e46b8a065dbb646e15
+    m_Address: Assets/Prefabs/NeededInAllLevels/LandingPad.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    - Remote
+    m_MainAsset: {fileID: 7283275075478463361, guid: 537217c0c134b9e46b8a065dbb646e15,
+      type: 3}
+    m_TargetAsset: {fileID: 7283275075478463361, guid: 537217c0c134b9e46b8a065dbb646e15,
+      type: 3}
+  - m_GUID: 7523af577f3a7114282dbeb56a728c95
+    m_Address: Assets/Prefabs/NeededInAllLevels/SoundController.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    - Remote
+    m_MainAsset: {fileID: 141947318865512534, guid: 7523af577f3a7114282dbeb56a728c95,
+      type: 3}
+    m_TargetAsset: {fileID: 141947318865512534, guid: 7523af577f3a7114282dbeb56a728c95,
+      type: 3}
+  - m_GUID: 984762cccf7daee44a8c0d830b577761
+    m_Address: Assets/Prefabs/Rotator.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    - Remote
+    m_MainAsset: {fileID: 5189609174711563648, guid: 984762cccf7daee44a8c0d830b577761,
+      type: 3}
+    m_TargetAsset: {fileID: 5189609174711563648, guid: 984762cccf7daee44a8c0d830b577761,
+      type: 3}
+  - m_GUID: 9b3d308cf6492d34c97f506e3024e0d3
+    m_Address: Assets/Prefabs/NeededInAllLevels/RocketShipV2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    - Remote
+    m_MainAsset: {fileID: 734635156764634732, guid: 9b3d308cf6492d34c97f506e3024e0d3,
+      type: 3}
+    m_TargetAsset: {fileID: 734635156764634732, guid: 9b3d308cf6492d34c97f506e3024e0d3,
+      type: 3}
+  - m_GUID: afacfc25fd97e5a40b05444c858717df
+    m_Address: Assets/Prefabs/NeededInAllLevels/Main Camera.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    - Remote
+    m_MainAsset: {fileID: 3103754284202143158, guid: afacfc25fd97e5a40b05444c858717df,
+      type: 3}
+    m_TargetAsset: {fileID: 3103754284202143158, guid: afacfc25fd97e5a40b05444c858717df,
+      type: 3}
+  - m_GUID: ded79a2b81ca22744883d68ecc110b08
+    m_Address: Assets/Prefabs/ObstacleContainer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    - Remote
+    m_MainAsset: {fileID: 4934180342630855963, guid: ded79a2b81ca22744883d68ecc110b08,
+      type: 3}
+    m_TargetAsset: {fileID: 4934180342630855963, guid: ded79a2b81ca22744883d68ecc110b08,
+      type: 3}
+  - m_GUID: e05da0ddfadc34246b6b4d43bd0df2c1
+    m_Address: Assets/Prefabs/Spike.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    - Remote
+    m_MainAsset: {fileID: 3122085341599750855, guid: e05da0ddfadc34246b6b4d43bd0df2c1,
+      type: 3}
+    m_TargetAsset: {fileID: 3122085341599750855, guid: e05da0ddfadc34246b6b4d43bd0df2c1,
+      type: 3}
+  - m_GUID: f1a637f589d30f048a2ed88ab0d6dbc4
+    m_Address: Assets/Prefabs/Background.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    - Remote
+    m_MainAsset: {fileID: 1407556665539151625, guid: f1a637f589d30f048a2ed88ab0d6dbc4,
+      type: 3}
+    m_TargetAsset: {fileID: 1407556665539151625, guid: f1a637f589d30f048a2ed88ab0d6dbc4,
+      type: 3}
+  - m_GUID: ff903260abd71d64cafeff6e02a2a53a
+    m_Address: Assets/Prefabs/NeededInAllLevels/LevelController.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+    - Remote
+    m_MainAsset: {fileID: 2429186386227858714, guid: ff903260abd71d64cafeff6e02a2a53a,
+      type: 3}
+    m_TargetAsset: {fileID: 2429186386227858714, guid: ff903260abd71d64cafeff6e02a2a53a,
+      type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a506c789ffabbe2498b469a06d9417fe, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: fd496569c92d26c499cedf2c3c29d225, type: 2}
+    - {fileID: 11400000, guid: e02e18ca54cc0394893eec0b6103d9b7, type: 2}
